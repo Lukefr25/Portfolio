@@ -1,5 +1,4 @@
-/* ---------- GENERAL ---------- */
-
+```css
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +16,9 @@ body {
 }
 
 
-/* ---------- HEADER ---------- */
+/* =========================
+   HEADER
+========================= */
 
 header {
     position: fixed;
@@ -38,7 +39,10 @@ header {
     z-index: 100;
 }
 
-header h1 {
+.logo {
+    color: white;
+    text-decoration: none;
+
     font-size: 22px;
     letter-spacing: 5px;
 }
@@ -51,6 +55,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
+
     font-size: 14px;
     letter-spacing: 1px;
 
@@ -62,7 +67,9 @@ nav a:hover {
 }
 
 
-/* ---------- HERO ---------- */
+/* =========================
+   HOME HERO
+========================= */
 
 .hero {
     height: 100vh;
@@ -78,9 +85,10 @@ nav a:hover {
     padding: 20px;
 }
 
-.hero h2 {
-    font-size: clamp(50px, 10vw, 120px);
+.hero h1 {
+    font-size: clamp(55px, 10vw, 130px);
     font-weight: 400;
+
     letter-spacing: 8px;
     text-transform: uppercase;
 }
@@ -95,9 +103,136 @@ nav a:hover {
 }
 
 
-/* ---------- GALLERY ---------- */
+/* =========================
+   SERIES SECTION
+========================= */
 
-.gallery {
+.series-section {
+    width: 90%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 100px 0 200px;
+}
+
+.series-section > h2 {
+    font-size: 40px;
+    font-weight: 400;
+
+    margin-bottom: 50px;
+}
+
+.series-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.series-card {
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    color: white;
+    text-decoration: none;
+}
+
+.series-card img {
+    width: 100%;
+    height: 600px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s;
+}
+
+.series-card:hover img {
+    transform: scale(1.04);
+}
+
+.series-title {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 35px;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.8)
+    );
+}
+
+.series-title h3 {
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.series-title p {
+    margin-top: 5px;
+
+    color: #ccc;
+}
+
+
+/* =========================
+   SERIES PAGE HEADER
+========================= */
+
+.series-header {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 180px 30px 100px;
+}
+
+.eyebrow {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #888;
+
+    margin-bottom: 20px;
+}
+
+.series-header h1 {
+    font-size: clamp(60px, 10vw, 130px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+}
+
+.series-header > p:last-child {
+    margin-top: 25px;
+
+    color: #aaa;
+
+    font-size: 17px;
+
+    max-width: 600px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.photo-grid {
     width: 90%;
     max-width: 1400px;
 
@@ -108,39 +243,41 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
 
     gap: 20px;
+
+    padding-bottom: 150px;
 }
 
-.photo {
-    overflow: hidden;
-}
-
-.photo img {
+.photo-grid img {
     width: 100%;
-    height: auto;
 
     display: block;
 
-    transition: transform 0.5s;
+    transition: opacity 0.3s;
+
+    cursor: pointer;
 }
 
-.photo:hover img {
-    transform: scale(1.03);
+.photo-grid img:hover {
+    opacity: 0.8;
 }
 
 
-/* ---------- ABOUT ---------- */
+/* =========================
+   ABOUT
+========================= */
 
 .about {
     max-width: 800px;
 
-    margin: 200px auto;
+    margin: 0 auto;
 
-    padding: 0 30px;
+    padding: 100px 30px 200px;
 }
 
 .about h2,
 .contact h2 {
     font-size: 40px;
+
     font-weight: 400;
 
     margin-bottom: 25px;
@@ -150,11 +287,14 @@ nav a:hover {
     color: #aaa;
 
     font-size: 18px;
+
     line-height: 1.8;
 }
 
 
-/* ---------- CONTACT ---------- */
+/* =========================
+   CONTACT
+========================= */
 
 .contact {
     text-align: center;
@@ -179,7 +319,9 @@ nav a:hover {
 }
 
 
-/* ---------- FOOTER ---------- */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -192,7 +334,9 @@ footer {
 }
 
 
-/* ---------- MOBILE ---------- */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -208,12 +352,21 @@ footer {
         font-size: 12px;
     }
 
-    .gallery {
+    .series-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero h2 {
+    .series-card img {
+        height: 500px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
         letter-spacing: 4px;
     }
 
 }
+```
