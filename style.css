@@ -15,7 +15,12 @@ body {
     color: #fff;
 }
 
-
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 /* =========================
    HEADER
 ========================= */
@@ -251,6 +256,7 @@ nav a:hover {
 
 .photo-grid img {
     width: 100%;
+    max-width: 100%;
 
     display: block;
 
